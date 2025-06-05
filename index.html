@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pure Grass Gardening & Irrigation Services</title>
+<style>
+  :root {
+    --green-primary: #2e7d32;
+    --green-light: #81c784;
+    --green-dark: #1b5e20;
+    --off-white: #f9faf7;
+    --brown: #5d4037;
+    --shadow: rgba(0,0,0,0.1);
+    --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: var(--font-sans);
+    color: #333;
+    background: var(--off-white);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  header {
+    background: var(--green-dark);
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--shadow);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  nav {
+    margin-top: 0.5rem;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    color: var(--green-light);
+    outline: none;
+  }
+  .hero {
+    background: url('hero.png') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 6rem 1rem 4rem;
+    box-shadow: inset 0 0 0 1000px rgba(46,125,50,0.6);
+  }
+  .hero h2 {
+    font-size: 3rem;
+    margin-bottom: 0.3rem;
+  }
+  .hero p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  h2.section-title {
+    color: var(--green-dark);
+    border-left: 6px solid var(--green-primary);
+    padding-left: 12px;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  ul {
+    margin: 1rem 0 1rem 1.2rem;
+  }
+  ul li {
+    margin-bottom: 0.6rem;
+  }
+  .services-list {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .service-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 14px var(--shadow);
+  }
+  .service-card h3 {
+    margin-top: 0;
+    color: var(--green-primary);
+    text-align: center;
+  }
+  .service-card p {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .service-card img {
+    max-width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px var(--shadow);
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  .testimonial {
+    background: var(--green-light);
+    color: var(--green-dark);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .faq dt {
+    font-weight: 700;
+    margin-top: 1rem;
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+  }
+  .faq dt::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-weight: 700;
+    color: var(--green-primary);
+    transition: transform 0.3s ease;
+  }
+  .faq dt.active::after {
+    content: '-';
+  }
+  .faq dd {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    display: none;
+  }
+  .faq dd.active {
+    display: block;
+  }
+  footer {
+    background: var(--green-dark);
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+  }
+  footer p {
+    margin: 0.2rem 0;
+  }
+  .contact-info {
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+
+  /* Price list styling */
+  .price-list {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow);
+    padding: 1.5rem;
+    max-width: 600px;
+    margin: 1.5rem auto;
+  }
+  .price-list h3 {
+    color: var(--green-primary);
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .price-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .price-list th, .price-list td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  .price-list th {
+    background: var(--green-light);
+    color: var(--green-dark);
+  }
+  .price-list tr:hover {
+    background: #f1f9f1;
+  }
+
+  @media (max-width: 600px) {
+    .hero h2 {
+      font-size: 2rem;
+    }
+    nav a {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    .service-card {
+      height: auto;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Pure Grass Gardening Services</h1>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="cookies.html">Cookie Policy</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<section class="hero" role="banner" aria-label="Introduction Hero Section">
+  <h2>Enhance Your Outdoors With Pure Grass</h2>
+  <p>Your trusted partner for expert gardening and irrigation solutions. Bringing nature’s beauty to your doorstep with care and precision.</p>
+</section>
+<main class="container" role="main" id="main-content">
+
+<section id="gardening-services" aria-labelledby="gardening-title">
+  <h2 id="gardening-title" class="section-title">Comprehensive Gardening Services</h2>
+  <p>At Pure Grass Gardening Services, we understand that a beautiful garden is a sanctuary, a place where life blooms and moments thrive. Our gardening services are designed to transform your outdoor spaces into lush, vibrant retreats that balance aesthetics with nature’s harmony. With expert knowledge, we offer a wide range of gardening solutions tailored to your unique environment and needs.</p>
+  
+  <div class="services-list">
+    <article class="service-card" tabindex="0" role="region" aria-label="Garden Design Service">
+      <img src="design.png" alt="Garden Design Layout" />
+      <h3>Garden Design & Planning</h3>
+      <p>We craft personalized garden designs that reflect your vision, lifestyle, and the natural characteristics of your landscape. Our plans feature seasonal planting guides, sustainable practices, and harmonious layouts to ensure year-round beauty.</p>
+    </article>
+    <article class="service-card" tabindex="0" role="region" aria-label="Plant Selection and Installation Service">
+      <img src="selection.png" alt="Plant selection and installation" />
+      <h3>Plant Selection & Installation</h3>
+      <p>Choose from a wide variety of native, drought-resistant, and ornamental plants. Our team handles plant installation with precision, ensuring healthy growth and integration with your garden’s ecosystem.</p>
+    </article>
+    <article class="service-card" tabindex="0" role="region" aria-label="Soil Health Management Service">
+      <img src="health.png" alt="Soil Analysis" />
+      <h3>Soil Analysis & Health</h3>
+      <p>Healthy gardens start with healthy soil. We analyze your soil’s quality and composition, amending it with organic matter and providing nutrient management plans tailored for optimal plant growth.</p>
+    </article>
+  </div>
+
+  <div class="price-list" aria-label="Gardening Services Price List">
+    <h3>Gardening Services Price List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Price Range</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Garden Design & Planning</td>
+          <td>$300 - $1,200 (depends on garden size)</td>
+        </tr>
+        <tr>
+          <td>Plant Selection & Installation</td>
+          <td>$150 - $800 (depending on plant type & quantity)</td>
+        </tr>
+        <tr>
+          <td>Soil Analysis & Health Management</td>
+          <td>$100 - $300</td>
+        </tr>
+        <tr>
+          <td>Routine Garden Maintenance (per visit)</td>
+          <td>$80 - $150</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <p>Our gardening expertise extends beyond planting. We are committed to sustainable practices such as organic fertilization, pest control alternatives, and water conservation measures that promote environmental health and reduce your garden’s footprint.</p>
+  <p>Whether you have a small backyard or expansive grounds, Pure Grass Gardening Services offers scalable solutions customized to fit your budget and gardening ambitions.</p>
+</section>
+
+<section id="irrigation-services" aria-labelledby="irrigation-title">
+  <h2 id="irrigation-title" class="section-title">Efficient Irrigation Services</h2>
+  <p>An efficient irrigation system is key to maintaining healthy plants and conserving water. We specialize in designing, installing, and servicing irrigation solutions that keep your garden nourished without waste.</p>
+  
+  <div class="services-list">
+    <article class="service-card" tabindex="0" role="region" aria-label="Irrigation System Design Service">
+      <img src="irri.png" alt="Irrigation System Design" />
+      <h3>Irrigation System Design</h3>
+      <p>We evaluate your garden layout, plant types, water sources, and soil conditions to create a customized irrigation system blueprint designed for maximum efficiency and minimal water waste.</p>
+    </article>
+    <article class="service-card" tabindex="0" role="region" aria-label="Irrigation Installation Service">
+      <img src="install.png" alt="Irrigation Installation" />
+      <h3>Irrigation Installation & Setup</h3>
+      <p>Our expert technicians install drip irrigation, sprinkler systems, and smart water timers with the latest technology to automate watering schedules, ensuring your garden receives just the right amount of hydration.</p>
+    </article>
+    <article class="service-card" tabindex="0" role="region" aria-label="Irrigation Maintenance Service">
+      <img src="repair.png" alt="Irrigation Maintenance" />
+      <h3>Regular Maintenance & Repairs</h3>
+      <p>Proper irrigation system upkeep prevents clogs, leaks, and overwatering. We offer maintenance plans that keep your system functioning flawlessly and protect your investment through timely repairs.</p>
+    </article>
+  </div>
+
+  <div class="price-list" aria-label="Irrigation Services Price List">
+    <h3>Irrigation Services Price List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Price Range</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Irrigation System Design</td>
+          <td>$250 - $900</td>
+        </tr>
+        <tr>
+          <td>Irrigation Installation & Setup</td>
+          <td>$400 - $1,500 (depends on system complexity)</td>
+        </tr>
+        <tr>
+          <td>Maintenance & Repairs (per visit)</td>
+          <td>$100 - $250</td>
+        </tr>
+        <tr>
+          <td>Water Conservation Consultation</td>
+          <td>$80 - $200</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <p>Our irrigation solutions contribute to healthier plants, reduced water bills, and ease of garden management. We emphasize eco-friendly practices that align with local water regulations and environmental stewardship.</p>
+</section>
+
+<section id="why-choose-us" aria-labelledby="choose-us-title">
+  <h2 id="choose-us-title" class="section-title">Why Choose Pure Grass Gardening Services?</h2>
+  <p>Choosing the right gardening and irrigation partner is essential for achieving your outdoor living dreams. Here’s why Pure Grass stands out:</p>
+  <ul>
+    <li><strong>Experience & Expertise:</strong> Over 15 years of dedicated service in gardening and irrigation with certified horticulturists and irrigation specialists.</li>
+    <li><strong>Personalized Solutions:</strong> Every garden is different; our tailored approaches consider your preferences and local conditions.</li>
+    <li><strong>Sustainable Practices:</strong> Commitment to eco-friendly methods that support biodiversity and conserve resources.</li>
+    <li><strong>Transparent Pricing:</strong> Honest quotes with no hidden fees, competitive rates, and flexible service packages.</li>
+    <li><strong>Customer Satisfaction:</strong> Proven track record with hundreds of happy clients and glowing testimonials.</li>
+    <li><strong>Quick Response:</strong> Reliable customer service ready to assist with inquiries and emergency repairs.</li>
+  </ul>
+  <p>We don’t just maintain gardens - we create living works of art that bring joy and tranquility to your home or business.</p>
+</section>
+
+<section id="testimonials" aria-labelledby="testimonial-title">
+  <h2 id="testimonial-title" class="section-title">What Our Clients Say</h2>
+  <blockquote class="testimonial" tabindex="0">
+    "Pure Grass transformed my backyard from a patchy lawn into a stunning garden oasis. Their irrigation system keeps everything green and thriving with hardly any effort on my part. Highly recommend!" – Jessica M.
+  </blockquote>
+  <blockquote class="testimonial" tabindex="0">
+    "The team is professional, friendly, and truly knowledgeable. Their regular maintenance services give me peace of mind and keep my garden healthy all year." – Raj P.
+  </blockquote>
+  <blockquote class="testimonial" tabindex="0">
+    "Excellent value and quality workmanship. They listened to what I wanted and delivered beyond my expectations. It’s rare to find such dedicated service providers." – Christine K.
+  </blockquote>
+</section>
+
+<section id="faq" aria-labelledby="faq-title" class="faq">
+  <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
+  <dl>
+    <dt tabindex="0">How often should I water my garden?</dt>
+    <dd>Watering frequency depends on plant types, soil, and seasonal needs. Generally, a few deep watering sessions per week encourage healthy roots over daily surface watering.</dd>
+    <dt tabindex="0">Do you use chemical pesticides in gardening?</dt>
+    <dd>We prioritize organic and natural pest management to protect your garden's health while minimizing environmental impact.</dd>
+    <dt tabindex="0">Can you install irrigation systems for existing gardens?</dt>
+    <dd>Yes, we provide expert evaluation and installation for retrofitting irrigation solutions to any existing garden layout.</dd>
+    <dt tabindex="0">What maintenance does an irrigation system need?</dt>
+    <dd>Regular checks for leaks, nozzle clogs, and timer functionality help keep irrigation efficient and avoid water waste.</dd>
+    <dt tabindex="0">Are your services available for commercial properties?</dt>
+    <dd>Absolutely, we cater to both residential and commercial clients, tailoring services to property size and usage needs.</dd>
+  </dl>
+</section>
+
+<section aria-label="Legal Disclaimer" style="font-size:0.9rem; color:#555; margin-top: 4rem;">
+  <h2 class="section-title" style="border-color:#888; color:#888;">Disclaimer</h2>
+  <p>
+    Pure Grass Gardening Services strives to provide accurate and reliable information and services. However, variations in climate, soil, and other factors may affect gardening outcomes. The company disclaims any liability for damages or losses resulting from the use or application of information and services provided. Customers are encouraged to consult local experts for region-specific advice. All services are subject to terms and conditions outlined in service agreements. Pure Grass Gardening Services does not guarantee specific plant growth results due to natural variability.
+  </p>
+</section>
+</main>
+  
+<footer role="contentinfo" aria-label="Footer Information">
+  <p>© 2024 Pure Grass Gardening Services. All rights reserved.</p>
+  <p class="contact-info">Phone: <a href="tel:+8889892299" style="color:#a5d6a7; text-decoration:none;">+1 (888) 989-2299</a> | Address: 1 Washington Mews, New York, NY 10003, USA</p>
+</footer>
+
+<script>
+  // FAQ accordion toggle
+  document.querySelectorAll('.faq dt').forEach((dt) => {
+    dt.addEventListener('click', () => {
+      dt.classList.toggle('active');
+      const dd = dt.nextElementSibling;
+      if (dd) {
+          dd.classList.toggle('active');
+      }
+    });
+    dt.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        dt.click();
+      }
+    });
+  });
+</script>
+</body>
+</html>
+

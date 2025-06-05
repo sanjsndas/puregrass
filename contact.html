@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us - Pure Grass Gardening Services</title>
+<style>
+  :root {
+    --green-primary: #2e7d32;
+    --green-light: #81c784;
+    --green-dark: #1b5e20;
+    --off-white: #f9faf7;
+    --shadow: rgba(0,0,0,0.1);
+    --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: var(--font-sans);
+    color: #333;
+    background: var(--off-white);
+    line-height: 1.6;
+  }
+  header {
+    background: var(--green-dark);
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px var(--shadow);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  nav {
+    margin-top: 0.5rem;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    color: var(--green-light);
+    outline: none;
+  }
+  main.container {
+    max-width: 900px;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+  }
+  h2 {
+    color: var(--green-dark);
+    border-left: 6px solid var(--green-primary);
+    padding-left: 12px;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow);
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: var(--green-dark);
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--font-sans);
+  }
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  button[type="submit"] {
+    background: var(--green-primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button[type="submit"]:hover,
+  button[type="submit"]:focus {
+    background: var(--green-light);
+    outline: none;
+  }
+  .contact-info {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow);
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+  .contact-info h3 {
+    margin-top: 0;
+    color: var(--green-primary);
+  }
+  .faq-contact dt {
+    font-weight: 700;
+    margin-top: 1rem;
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+  }
+  .faq-contact dt::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-weight: 700;
+    color: var(--green-primary);
+    transition: transform 0.3s ease;
+  }
+  .faq-contact dt.active::after {
+    content: '-';
+  }
+  .faq-contact dd {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    display: none;
+  }
+  .faq-contact dd.active {
+    display: block;
+  }
+  footer {
+    background: var(--green-dark);
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  footer p {
+    margin: 0.2rem 0;
+  }
+  footer .contact-info-footer {
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+  a {
+    color: var(--green-primary);
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+    form, .contact-info {
+      max-width: 100%;
+      padding: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Pure Grass Gardening Services</h1>
+  <p><strong>Contact Us</strong></p>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="cookies.html">Cookie Policy</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<main class="container" role="main" aria-label="Contact Page">
+
+<section aria-labelledby="contact-intro">
+  <h2 id="contact-intro">We’re Here to Help You Grow</h2>
+  <p>Thank you for considering Pure Grass Gardening Services for your gardening and irrigation needs. Whether you have questions about our services, need guidance on maintaining your garden, or want to schedule a consultation, we’re ready and eager to assist.</p>
+  <p>Reach out to us via the contact form below, call us directly, or visit us at our office. Our knowledgeable and friendly team is committed to providing you with excellent customer service and professional advice.</p>
+</section>
+
+<section aria-labelledby="contact-form-section">
+  <h2 id="contact-form-section">Contact Form</h2>
+  <form action="#" method="post" aria-label="Contact form">
+    <label for="name">Full Name <span aria-hidden="true" style="color: red;">*</span></label>
+    <input type="text" id="name" name="name" required aria-required="true" placeholder="Your full name" />
+
+    <label for="email">Email Address <span aria-hidden="true" style="color: red;">*</span></label>
+    <input type="email" id="email" name="email" required aria-required="true" placeholder="you@example.com" />
+
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" name="phone" placeholder="Optional: Your phone number" />
+
+    <label for="message">Your Message <span aria-hidden="true" style="color: red;">*</span></label>
+    <textarea id="message" name="message" required aria-required="true" placeholder="Describe your inquiry or message"></textarea>
+
+    <button type="submit" aria-label="Submit contact form">Send Message</button>
+  </form>
+</section>
+
+<section aria-labelledby="direct-contact-info" class="contact-info">
+  <h2 id="direct-contact-info">Direct Contact Information</h2>
+  <p>Prefer to talk directly? You can reach us through multiple channels:</p>
+  <ul>
+    <li><strong>Phone:</strong> <a href="tel:+18889892299" aria-label="Call Pure Grass Gardening Services">+1 (888) 989-2299</a></li>
+    <li><strong>Email:</strong> <a href="mailto:info@puregrassgardening.com" aria-label="Email Pure Grass Gardening Services">info@puregrassgardening.com</a></li>
+    <li><strong>Address:</strong> 1 Washington Mews, New York, NY 10003, USA</li>
+    <li><strong>Office Hours:</strong> Monday - Friday, 8:00 AM to 6:00 PM</li>
+  </ul>
+  <p>Our office is open during business hours for visits by appointment. We recommend scheduling in advance to ensure availability.</p>
+</section>
+
+<section aria-labelledby="faq-contact" class="faq-contact" role="region" aria-live="polite">
+  <h2 id="faq-contact">Frequently Asked Questions About Contacting Us</h2>
+  <dl>
+    <dt tabindex="0">How quickly will I receive a response to my inquiry?</dt>
+    <dd>We strive to respond to all inquiries within one business day. During peak seasons, response times may be slightly longer, but we’ll always keep you informed.</dd>
+
+    <dt tabindex="0">Can I schedule a garden consultation online?</dt>
+    <dd>Currently, scheduling is handled over the phone or by email to ensure we understand your unique needs before confirming an appointment.</dd>
+
+    <dt tabindex="0">What information should I include in my message?</dt>
+    <dd>Providing details about your garden size, concerns, or specific questions helps us prepare and serve you better.</dd>
+
+    <dt tabindex="0">Is my personal information safe when I contact you?</dt>
+    <dd>Yes, we take your privacy seriously and only use your information to respond to your inquiry, consistent with our Privacy Policy.</dd>
+
+    <dt tabindex="0">Do you offer emergency gardening or irrigation services?</dt>
+    <dd>Yes, we provide emergency services for irrigation repairs. Please call us directly for urgent requests.</dd>
+  </dl>
+</section>
+
+<section aria-labelledby="visit-us" style="margin-top: 3rem;">
+  <h2 id="visit-us">Visit Us</h2>
+  <p>Our office and garden center are located at:</p>
+  <address>
+    1 Washington Mews<br />
+   New York, NY 10003, USA<br />
+  </address>
+  <p>We welcome visits by appointment to discuss your gardening projects, see sample plants, and learn more about our services in person.</p>
+  <p>Parking is available on site, and we are accessible by public transport with stops nearby.</p>
+</section>
+
+</main>
+
+<footer role="contentinfo" aria-label="Footer Information">
+  <p>© 2024 Pure Grass Gardening Services. All rights reserved.</p>
+  <p class="contact-info-footer">Phone: <a href="tel:+18889892299" style="color:#a5d6a7; text-decoration:none;">+1 (888) 989-2299</a> | Address: 1 Washington Mews, New York, NY 10003, USA</p>
+</footer>
+
+<script>
+  // FAQ accordion toggle
+  document.querySelectorAll('.faq-contact dt').forEach((dt) => {
+    dt.addEventListener('click', () => {
+      dt.classList.toggle('active');
+      const dd = dt.nextElementSibling;
+      if (dd) {
+          dd.classList.toggle('active');
+      }
+    });
+    dt.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        dt.click();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
